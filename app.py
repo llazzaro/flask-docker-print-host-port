@@ -11,8 +11,7 @@ def hello():
 
 if __name__ == "__main__":
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.bind(('localhost', 0))
+    sock.bind(('0.0.0.0', 0))
     port = sock.getsockname()[1]
     sock.close()
-    app.run(port=port)
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0', port=port)
